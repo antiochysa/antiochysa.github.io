@@ -1,0 +1,285 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "LinkStache Schema",
+    "format": "categories",
+    "type": "object",
+    "properties": {
+        "profile": {
+            "type": "object",
+            "title": "Profile Info",
+            "properties": {
+                "picture": {
+                    "description": "URL/path to image for profile",
+                    "$ref": "#/$defs/nonEmptyString"
+                },
+                "name": {
+                    "description": "Display name for page",
+                    "$ref": "#/$defs/nonEmptyString"
+                },
+                "bio": {
+                    "description": "Short bio describing page",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "picture",
+                "name"
+            ]
+        },
+        "blocks": {
+            "type": "array",
+            "title": "Blocks",
+            "description": "Content blocks such as headers, links, or text",
+            "format": "table",
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "title": "Link",
+                        "properties": {
+                            "block": {
+                                "enum": ["link"],
+                                "$ref": "#/$defs/hidden"
+                            },
+                            "text": {
+                                "description": "Text to show for link",
+                                "$ref": "#/$defs/nonEmptyString"
+                            },
+                            "link": {
+                                "description": "URL to link to",
+                                "format": "url",
+                                "$ref": "#/$defs/nonEmptyString"
+                            },
+                            "icon": {
+                                "description": "Optional icon to show. Must be the class(es) for a Font Awesome icon",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "text",
+                            "link"
+                        ],
+                        "additionalProperties": false
+                    },
+                    {
+                        "type": "object",
+                        "title": "Section Header",
+                        "properties": {
+                            "block": {
+                                "enum": ["header"],
+                                "$ref": "#/$defs/hidden"
+                            },
+                            "text": {
+                                "description": "Section header text",
+                                "$ref": "#/$defs/nonEmptyString"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    {
+                        "type": "object",
+                        "title": "Text",
+                        "properties": {
+                            "block": {
+                                "enum": ["text"],
+                                "$ref": "#/$defs/hidden"
+                            },
+                            "text": {
+                                "description": "Text contents. Supports style tags",
+                                "$ref": "#/$defs/nonEmptyString"
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "title": "Image",
+                        "properties": {
+                            "block": {
+                                "enum": ["image"],
+                                "$ref": "#/$defs/hidden"
+                            },
+                            "image": {
+                                "description": "Image to show",
+                                "format": "url",
+                                "$ref": "#/$defs/nonEmptyString"
+                            },
+                            "link": {
+                                "description": "Link to go to when image is clicked",
+                                "format": "url",
+                                "$ref": "#/$defs/nonEmptyString"
+                            }
+                        },
+                        "required": ["image"]
+                    },
+                    {
+                        "type": "object",
+                        "title": "HTML",
+                        "properties": {
+                            "block": {
+                                "enum": ["html"],
+                                "$ref": "#/$defs/hidden"
+                            },
+                            "file": {
+                                "description": "HTML file to load (preview does not update on file change)",
+                                "$ref": "#/$defs/nonEmptyString"
+                            }
+                        }
+                    }
+                ],
+                "required": ["block"]
+            }
+        },
+        "iconLinks": {
+            "description": "Set of clickable icons",
+            "title": "Icon Links",
+            "format": "tabs",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Icon",
+                "properties": {
+                    "link": {
+                        "title": "Link",
+                        "description": "URL to link to",
+                        "format": "url",
+                        "$ref": "#/$defs/nonEmptyString"
+                    },
+                    "icon": {
+                        "description": "Icon to show. Must be the class(es) for a Font Awesome icon",
+                        "type": "string",
+                        "title": "Icon"
+                    }
+                },
+                "required": [
+                    "icon",
+                    "link"
+                ]
+            },
+            "maxItems": 7
+        },
+        "style": {
+            "type": "object",
+            "title": "Style",
+            "properties": {
+                "circleProfile": {
+                    "title": "Circular Profile Picture",
+                    "description": "If true, profile picture will be a cirlce (as opposed to square)",
+                    "type": "boolean",
+                    "format": "checkbox"
+                },
+                "buttonCorners": {
+                    "title": "Button Corners",
+                    "description": "Style for link button corners",
+                    "type": "string",
+                    "enum": [
+                        "round",
+                        "square",
+                        "roundedsquare"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Round",
+                            "Square",
+                            "Rounded Square"
+                        ]
+                    }
+                },
+                "outlinedButton": {
+                    "title": "Outlined Buttons",
+                    "description": "If set, button will be transparent with an outline. False fills the button",
+                    "type": "boolean",
+                    "format": "checkbox"
+                },
+                "imageCorners": {
+                    "title": "Image Corners",
+                    "description": "Style for images in links section",
+                    "type": "string",
+                    "enum": [
+                        "square",
+                        "roundedsquare"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Square",
+                            "Rounded Square"
+                        ]
+                    }
+                },
+                "font": {
+                    "description": "The name of the font to use from Google Fonts",
+                    "$ref": "#/$defs/nonEmptyString"
+                },
+                "gradientBg": {
+                    "title": "Use Gradient Background",
+                    "description": "If set uses gradient background instead of flat color",
+                    "type": "boolean",
+                    "format": "checkbox"
+                },
+                "bgColor": {
+                    "title": "Background Color",
+                    "description": "Color to use for background",
+                    "type": "string",
+                    "format": "color"
+                },
+                "buttonColor": {
+                    "title": "Button Color",
+                    "description": "Color to use for text and button backgrounds",
+                    "type": "string",
+                    "format": "color"
+                },
+                "iconSize": {
+                    "title": "Icon Size",
+                    "description": "Size for icons",
+                    "type": "string",
+                    "enum": [
+                        "lg",
+                        "xl",
+                        "2xl"
+                    ],
+                    "options": {
+                        "enum_titles": [
+                            "Small",
+                            "Medium",
+                            "Large"
+                        ]
+                    }
+                },
+                "iconLinksTop": {
+                    "type": "boolean",
+                    "description": "Whether icon links should be above or below other links",
+                    "title": "Icon Links Position",
+                    "options": {
+                        "enum_titles": [
+                            "Top",
+                            "Bottom"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "circleProfile",
+                "buttonCorners",
+                "outlinedButton",
+                "imageCorners",
+                "font",
+                "gradientBg",
+                "bgColor",
+                "buttonColor",
+                "iconSize",
+                "iconLinksTop"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "$defs": {
+        "nonEmptyString": {
+            "type": "string",
+            "minLength": 1
+        },
+        "hidden": {
+            "options": {
+                "hidden": true
+            }
+        }
+    }
+}

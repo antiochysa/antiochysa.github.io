@@ -1,0 +1,26 @@
+# This workflow will run `check-jsonschema` to verify data.json conforms to the schema in data.schema.json
+name: Schema Validation
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        pip install check-jsonschema
+    - name: Test json
+      run: |
+        check-jsonschema --schemafile data.schema.json data.json --traceback-mode full
+

@@ -1,0 +1,193 @@
+ /* initially based on https://github.com/johnggli/linktree/blob/master/style.css */
+ /* Use underscores for mustache since curly braces cause issues:  {{=__ __=}} */
+ @import url('https://fonts.googleapis.com/css?family=__font__:500,700&display=swap');
+
+
+:root {
+    --bg-color: __bgColor__;
+    --button-color: __buttonColor__;
+    --font: '__font__', sans-serif;
+
+    --button-rad-round: 1000px;
+    --button-rad-square: 0px;
+    --button-rad-roundedsquare: 10px;
+    --button-rad: var(--button-rad-__buttonCorners__);
+
+    --image-rad-square: 0px;
+    --image-rad-roundedsquare: 10px;
+    --image-rad: var(--image-rad-__imageCorners__);
+}
+
+body {
+    margin: 0;
+    padding-top: 64px;
+    min-height: 100vh;
+    font-family: var(--font);
+    /* __#gradientBg__ */
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2),  transparent) var(--bg-color);
+    /*__/gradientBg__ __^gradientBg__ */
+    background: var(--bg-color);
+    /* __/gradientBg__ */
+    animation: 1s ease-out .3s 1 transitionAnimation;
+}
+
+#target{
+    display:flex;
+    flex-flow: column;
+}
+
+.profile-picture {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    display: block;
+    /*__#circleProfile__*/
+        border-radius: 50%;
+    /*__/circleProfile__*/
+    margin: 0px auto 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-name {
+    color: var(--button-color);
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.25;
+    display: block;
+    font-family: var(--font);
+    margin-bottom: .5rem;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.profile-bio {
+    color: var(--button-color);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25;
+    display: block;
+    margin-top: 4px;
+    font-family: var(--font);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#links {
+    margin: 0px auto;
+    max-width: 675px;
+    width: 100%;
+    display: block;
+}
+
+.header-block, .text-block {
+    position: relative;
+    background-color: transparent;
+    color: var(--button-color);
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin: 20px 10px 0px;
+    padding: 10px; 
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.text-block {
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.link-block {
+    position: relative;
+    /*__#outlinedButton__*/
+        background-color: transparent;
+        color: var(--button-color);
+    /*__/outlinedButton__ __^outlinedButton__ */
+        background-color: var(--button-color);
+        color: var(--bg-color);
+    /*__/outlinedButton__*/
+
+    border: solid var(--button-color) 2px;
+    border-radius: var(--button-rad);
+
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.link-block > i {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+}
+
+.image-block {
+    display: block;
+    width: 75%;
+    margin: 10px auto;
+    border-radius: var(--image-rad);
+}
+
+.html-block {
+    position: relative;
+    background-color: transparent;
+    color: var(--button-color);
+    display: block;
+    padding: 10px;
+}
+
+#icon-links {
+    margin: 36px 0;
+    width:100%;
+    text-align: center;
+    /*__^iconLinksTop__*/
+    order: 999;
+    /*__/iconLinksTop__*/
+
+}
+
+.icon-link {
+    display: inline-block;
+    color: var(--button-color);
+    transition: all .1s ease-in-out; 
+    margin: 0 8px;
+}
+
+@media (hover: hover) {
+    .link-block:hover {
+        /*__#outlinedButton__*/
+            background-color: var(--button-color);
+            color: var(--bg-color);
+        /*__/outlinedButton__ __^outlinedButton__ */
+            background-color: transparent;
+            color: var(--button-color);
+        /*__/outlinedButton__*/
+        
+    }
+
+    .icon-link:hover {
+        transform: scale(1.1); 
+    }
+}
+
+/*-------------------------animations-----------------------*/
+@keyframes transitionAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
