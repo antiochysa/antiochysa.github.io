@@ -1,74 +1,59 @@
 {
   "profile": {
-    "picture": "https://i.imgur.com/SsQRaNE.png",
-    "name": "LinkStache",
-    "bio": "A LinkTree clone using Mustache templates"
+    "picture": "profile_picture.jpg",
+    "name": "Antioch YSA Ward",
+    "bio": ""
   },
   "blocks": [
     {
-      "block": "header",
-      "text": "Project Links"
-    },
-    {
-      "block": "link",
-      "text": "Github",
-      "link": "https://github.com/jacobgb24/LinkStache",
-      "icon": "fa-brands fa-github"
-    },
-    {
-      "block": "link",
-      "text": "GUI Editor",
-      "link": "gui_editor.html",
-      "icon": "fa-solid fa-shapes"
+      "block": "html",
+      "file": "info.html"
     },
     {
       "block": "header",
-      "text": "Tools Used"
-    },
-    {
-      "block": "link",
-      "text": "Mustache Templates",
-      "link": "https://mustache.github.io/",
-      "icon": "fa-solid fa-code"
-    },
-    {
-      "block": "link",
-      "text": "JSON Schema",
-      "link": "https://json-schema.org/",
-      "icon": "fa-solid fa-list-check"
-    },
-    {
-      "block": "link",
-      "text": "JSON Editor",
-      "link": "https://github.com/json-editor/json-editor",
-      "icon": "fa-solid fa-pen"
-    },
-    {
-      "block": "header",
-      "text": "Other Block Examples"
-    },
-    {
-      "block": "text",
-      "text": "This is a text block. <i>You can add html tags for additional style</i>"
+      "text": "Recent Activities"
     },
     {
       "block": "html",
-      "file": "html_block_example.html"
+      "file": "instagram.html"
     },
     {
-      "block": "image",
-      "image": "https://imgur.com/SsQRaNE.png",
-      "link": "https://example.com"
+      "block": "header",
+      "text": "Social Media"
+    },
+    {
+      "block": "link",
+      "text": "Facebook",
+      "link": "https://www.facebook.com/groups/antiochysa",
+      "icon": "fa-brands fa-facebook-f"
+    },
+    {
+      "block": "link",
+      "text": "Instagram",
+      "link": "https://www.instagram.com/antioch_ysa/",
+      "icon": "fa-brands fa-instagram"
+    },
+    {
+      "block": "header",
+      "text": "Other Links"
+    },
+    {
+      "block": "link",
+      "text": "Sunday Program",
+      "link": "https://docs.google.com/document/d/1v5qH-FSAuujHhdFPelIsQ2V4cD20qoQ2lPfaRmoHLUo/edit?usp=sharing",
+      "icon": "fa-solid fa-book"
+    },
+    {
+      "block": "link",
+      "text": "Antioch Stake Website",
+      "link": "https://antiochstake.org/",
+      "icon": "fa-solid fa-church"
     }
   ],
   "iconLinks": [
     {
-      "link": "https://github.com/jacobgb24/LinkStache",
-      "icon": "fa-brands fa-github"
-    },
-    {
-      "link": "https://github.com/jacobgb24",
-      "icon": "fa-solid fa-user"
+      "link": "mailto:antiochstakeysa@gmail.com",
+      "icon": "fa-regular fa-envelope"
     }
   ],
   "style": {
