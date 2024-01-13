@@ -11,15 +11,13 @@
     },
     {
       "block": "header",
-      "text": "Recent Activities"
-    },
-    {
-      "block": "html",
-      "file": "instagram.html"
-    },
-    {
-      "block": "header",
       "text": "Social Media"
+    },
+    {
+      "block": "link",
+      "text": "Instagram",
+      "link": "https://www.instagram.com/antioch_ysa/",
+      "icon": "fa-brands fa-instagram"
     },
     {
       "block": "link",
@@ -28,10 +26,8 @@
       "icon": "fa-brands fa-facebook-f"
     },
     {
-      "block": "link",
-      "text": "Instagram",
-      "link": "https://www.instagram.com/antioch_ysa/",
-      "icon": "fa-brands fa-instagram"
+      "block": "html",
+      "file": "instagram.html"
     },
     {
       "block": "header",
@@ -48,6 +44,10 @@
       "text": "Antioch Stake Website",
       "link": "https://antiochstake.org/",
       "icon": "fa-solid fa-church"
+    },
+    {
+      "block": "text",
+      "text": "<small><i>AntiochStake.Org is an unofficial site of The Church of Jesus Christ Of Latter-day Saints</i></small>"
     }
   ],
   "iconLinks": [
