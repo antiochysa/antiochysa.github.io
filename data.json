@@ -41,11 +41,6 @@
     },
     {
       "block": "link",
-      "text": "Regional YSA Conference Registration",
-      "link": "https://docs.google.com/forms/d/e/1FAIpQLSdKbbkMP7CxD2EMNPndAQ2lQVG1ZT9WyGbmaItnzgkB-7j7lQ/viewform"
-    },
-    {
-      "block": "link",
       "text": "Antioch Stake Website",
       "link": "https://antiochstake.org/",
       "icon": "fa-solid fa-church"
