@@ -46,6 +46,12 @@
       "icon": "fa-solid fa-church"
     },
     {
+      "block": "link",
+      "text": "Multi-Stake Campout Registration",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSd5aOgfZ9321BSwQJVyvAK0WPOvRR0L6Weq4NqzaTRAj26Q7w/viewform",
+      "icon": "fa-solid fa-tents"
+    },
+    {
       "block": "text",
       "text": "<small><i>ysa.antiochstake.org is an unofficial site of The Church of Jesus Christ Of Latter-day Saints</i></small>"
     }
