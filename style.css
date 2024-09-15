@@ -30,6 +30,7 @@ body {
     background: var(--bg-color);
     /* __/gradientBg__ */
     animation: 1s ease-out .3s 1 transitionAnimation;
+    overscroll-behavior: none;
 }
 
 #target{
