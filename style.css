@@ -19,6 +19,10 @@
     --image-rad: var(--image-rad-__imageCorners__);
 }
 
+html, body {
+    overscroll-behavior: none;
+}
+
 body {
     margin: 0;
     padding-top: 64px;
@@ -30,7 +34,6 @@ body {
     background: var(--bg-color);
     /* __/gradientBg__ */
     animation: 1s ease-out .3s 1 transitionAnimation;
-    overscroll-behavior: none;
 }
 
 #target{
