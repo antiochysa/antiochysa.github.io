@@ -46,6 +46,12 @@
       "icon": "fa-solid fa-church"
     },
     {
+      "block": "link",
+      "text": "Bay Area YSA Slack",
+      "link": "https://join.slack.com/t/bayareaysaworkspace/shared_invite/zt-2qp4u80pw-Vl0YzwdNyuH_XpE3LyeqKg",
+      "icon": "fa-brands fa-slack"
+    },
+    {
       "block": "text",
       "text": "<small><i>ysa.antiochstake.org is an unofficial site of The Church of Jesus Christ Of Latter-day Saints</i></small>"
     }
