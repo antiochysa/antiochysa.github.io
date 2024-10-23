@@ -10,6 +10,12 @@
       "file": "info.html"
     },
     {
+      "block": "link",
+      "text": "Tithing Declaration Sign Up",
+      "link": "https://www.signupgenius.com/go/10C094FABA92CA0FDC07-52302599-tithing",
+      "icon": "pen-to-square"
+    },
+    {
       "block": "header",
       "text": "Social Media"
     },
