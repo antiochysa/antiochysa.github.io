@@ -19,8 +19,12 @@
     --image-rad: var(--image-rad-__imageCorners__);
 }
 
-html, body {
-    overscroll-behavior: none;
+html {
+    /* __#gradientBg__ */
+    background: linear-gradient(var(--bg-color), var(--bg-color2));
+    /*__/gradientBg__ __^gradientBg__ */
+    background: var(--bg-color);
+    /* __/gradientBg__ */
 }
 
 body {
@@ -28,11 +32,6 @@ body {
     padding-top: 64px;
     min-height: 100vh;
     font-family: var(--font);
-    /* __#gradientBg__ */
-    background: linear-gradient(var(--bg-color), var(--bg-color2));
-    /*__/gradientBg__ __^gradientBg__ */
-    background: var(--bg-color);
-    /* __/gradientBg__ */
     animation: 1s ease-out .3s 1 transitionAnimation;
 }
 
