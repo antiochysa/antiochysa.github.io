@@ -10,12 +10,6 @@
       "file": "info.html"
     },
     {
-      "block": "link",
-      "text": "Tithing Declaration Signup",
-      "link": "https://calendly.com/antiochysa/antioch-ysa-tithing-declaration",
-      "icon": "fa-solid fa-calendar-check"
-    },
-    {
       "block": "header",
       "text": "Social Media"
     },
